@@ -2,7 +2,7 @@ import React from 'react'
 
 function AddTodo() {
   return (
-    <div class>
+    <div>
 
     </div>
   )

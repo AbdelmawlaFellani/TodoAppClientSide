@@ -3,7 +3,7 @@
 
 This is the frontend part of a simple todo app built using the MERN (MongoDB, Express.js, React.js, Node.js) stack.
 
-i:t's one of my first projects on mern stack technology
+it's one of my first projects on mern stack technology
 ## Features
 
 - Add new todos
