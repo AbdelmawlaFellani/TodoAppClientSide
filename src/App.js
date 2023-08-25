@@ -50,7 +50,7 @@ function App() {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
   }
-  function markCompleted(id) {
+  function MarkCompleted(id) {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
@@ -67,9 +67,9 @@ function App() {
           <Route path="/trash" component={TrashPage} />
       </div>
     </Router> */}
-      <div className="font-primary">Tasks's Side</div>
+      <div className="font-primary text-center text-5xl text-blue-500 font-extrabold p-12">To-do App</div>
       <AddTodo addTodo={AddTodoF} />
-      <TodoList todos={todos} deleteTodo={DeleteTodo} markCompleted={markCompleted} />
+      <TodoList todos={todos} deleteTodo={DeleteTodo} markCompleted={MarkCompleted} />
     </div>
   );
 }
