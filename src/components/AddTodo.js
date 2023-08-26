@@ -1,15 +1,28 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function AddTodo({ addTodo }) {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDesc, setTaskDesc] = useState("");
   const HandleSubmit = (event) => {
     event.preventDefault();
+
     console.log(event);
     if (taskTitle.trim() !== "" && taskDesc.trim() !== "") {
       addTodo(taskTitle, taskDesc);
-      setTaskDesc("");
-      setTaskTitle("");
+      axios
+        .post("http://localhost:8080/api/todos", {
+          title: taskTitle,
+          desc: taskDesc,
+          completed: false,
+        })
+        .then((res) => {
+          setTaskDesc("");
+          setTaskTitle("");
+        })
+        .catch((err) => {
+          console.log("error in Adding task: " + err.message);
+        });
     }
   };
 
